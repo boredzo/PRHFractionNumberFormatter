@@ -150,6 +150,12 @@ static void getFraction(double fraction, double *outNum, double *outDenom, bool 
 		}
 	}
 
+	//Special case: Handle integers. Our result in this case is the value over 1.
+	if ((num >= denom) && ((num / denom) == fabs(floor(fraction)))) {
+		num /= denom;
+		denom = 1.0;
+	}
+
 	if(is_negative) num = -num; //Or we could do this to denominator. It doesn't matter which, just so long as we negate only one and not the other.
 
 	if(outNum)

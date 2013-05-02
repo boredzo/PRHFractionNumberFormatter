@@ -184,7 +184,7 @@
 				                         andDenominator:&denominator
 							              fractionRange:NULL];
 	STAssertTrue(parsed, @"Generating a fraction from %@ should succeed", number);
-	STAssertEquals(fabs(numerator), value, @"Numerator of fraction generated from whole number should be that number");
+	STAssertEquals(fabs(numerator), fabs(value), @"Numerator of fraction generated from whole number should be that number");
 	STAssertEquals(fabs(denominator), 1.0, @"Denominator of fraction generated from whole number should be one");
 	STAssertFalse(signbit(numerator) || signbit(denominator), @"Neither of the components of the fraction generated from positive number should be negative; instead, got %g and %g", numerator, denominator);
 }
@@ -201,7 +201,7 @@
 				                         andDenominator:&denominator
 							              fractionRange:NULL];
 	STAssertTrue(parsed, @"Generating a fraction from %@ should succeed", number);
-	STAssertEquals(fabs(numerator), value, @"Numerator of fraction generated from whole number should be that number");
+	STAssertEquals(fabs(numerator), fabs(value), @"Numerator of fraction generated from whole number should be that number");
 	STAssertEquals(fabs(denominator), 1.0, @"Denominator of fraction generated from whole number should be one");
 	STAssertTrue(((bool)signbit(numerator)) ^ ((bool)signbit(denominator)), @"Exactly one of the components of the fraction generated from negative number should be negative; instead, got %g and %g", numerator, denominator);
 }
@@ -218,7 +218,7 @@
 				                         andDenominator:&denominator
 							              fractionRange:NULL];
 	STAssertTrue(parsed, @"Generating a fraction from %@ should succeed", number);
-	STAssertEquals(fabs(numerator), value, @"Numerator of fraction generated from whole number should be that number");
+	STAssertEquals(fabs(numerator), fabs(value), @"Numerator of fraction generated from whole number should be that number");
 	STAssertEquals(fabs(denominator), 1.0, @"Denominator of fraction generated from whole number should be one");
 	STAssertFalse(signbit(numerator) || signbit(denominator), @"Neither of the components of the fraction generated from positive number should be negative; instead, got %g and %g", numerator, denominator);
 }
@@ -235,7 +235,7 @@
 				                         andDenominator:&denominator
 							              fractionRange:NULL];
 	STAssertTrue(parsed, @"Generating a fraction from %@ should succeed", number);
-	STAssertEquals(fabs(numerator), value, @"Numerator of fraction generated from whole number should be that number");
+	STAssertEquals(fabs(numerator), fabs(value), @"Numerator of fraction generated from whole number should be that number");
 	STAssertEquals(fabs(denominator), 1.0, @"Denominator of fraction generated from whole number should be one");
 	STAssertTrue(((bool)signbit(numerator)) ^ ((bool)signbit(denominator)), @"Exactly one of the components of the fraction generated from negative number should be negative; instead, got %g and %g", numerator, denominator);
 }
