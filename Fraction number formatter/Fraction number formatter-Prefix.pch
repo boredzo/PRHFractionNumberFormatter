@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Fraction number formatter' target in the 'Fraction number formatter' project
+//
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif
