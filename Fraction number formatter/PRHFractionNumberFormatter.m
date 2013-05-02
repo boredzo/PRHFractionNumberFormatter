@@ -137,8 +137,8 @@ static void getFraction(double fraction, double *outNum, double *outDenom, bool 
 
 	//Special-case: Bail on zero.
 	if(fraction < DBL_EPSILON) {
-		num = 1.0;
-		denom = INFINITY;
+		num = 0.0;
+		denom = 1.0;
 	} else {
 		double test;
 		while((test = num / denom) != fraction) {
