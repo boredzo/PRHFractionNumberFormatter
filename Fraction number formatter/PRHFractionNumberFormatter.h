@@ -10,4 +10,10 @@
 
 @interface PRHFractionNumberFormatter : NSNumberFormatter
 
+//If outRange is NULL, string must entirely be a fraction. If it is non-NULL, string may be any string that contains a fraction, and the returned values represent the first fraction found.
+- (bool) parseString:(NSString *)string
+       intoNumerator:(double *)outNumerator
+	  andDenominator:(double *)outDenominator
+       fractionRange:(out NSRange *)outRange;
+
 @end
