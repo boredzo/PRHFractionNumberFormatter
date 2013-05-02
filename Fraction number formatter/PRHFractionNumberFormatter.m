@@ -46,7 +46,12 @@ static void getFraction(double fraction, double *outNum, double *outDenom, bool 
 	bool parsed = [self parseString:string intoNumerator:&numerator andDenominator:&denominator fractionRange:&fractionRange];
 	if (!parsed) {
 		//It's not a fraction, so let our superclass try the usual number-parsing machinery in case it's a singular number.
-		return [super getObjectValue:obj forString:string range:outRange error:outError];
+		@try {
+			return [super getObjectValue:obj forString:string range:outRange error:outError];
+		} @catch (NSException *exc) {
+			*outError = [self formattingErrorWithDescription:@"Could not parse this string, neither as a fraction nor as a singular number"];
+			return NO;
+		}
 	}
 
 	if (denominator == 0.0) {
