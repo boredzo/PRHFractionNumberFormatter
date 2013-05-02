@@ -136,8 +136,8 @@
 		andDenominator:&denominator
 		fractionRange:NULL];
 	STAssertTrue(parsed, @"Generating a fraction from %@ should succeed", number);
-	STAssertEquals(numerator, 0.0, @"Numerator of fraction generated from zero should be zero");
-	STAssertFalse(denominator == 0.0, @"Denominator of fraction generated from zero should not be zero");
+	STAssertEquals(numerator, 0.0, @"Numerator of fraction (%g/%g) generated from zero should be zero", numerator, denominator);
+	STAssertFalse(denominator == 0.0, @"Denominator of fraction (%g/%g) generated from zero should not be zero", numerator, denominator);
 }
 
 - (void) testUnparsingFractionFromPositiveFraction {
